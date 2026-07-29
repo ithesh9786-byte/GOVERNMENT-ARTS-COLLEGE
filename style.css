@@ -83,6 +83,7 @@ header{
     overflow:auto;
     transition:0.4s;
     padding-top:20px;
+    z-index: 9999;
 }
 
 #sidebar a,
