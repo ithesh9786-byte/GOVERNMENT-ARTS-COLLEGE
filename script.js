@@ -1,6 +1,14 @@
 // Open Sidebar
 function openMenu() {
-    document.getElementById("sidebar").style.left = "0";
+    const sidebar =
+        document.getElementById("sidebar");
+    sidebar.style.left = "0px";
+    sidebar.style.display = "block";
+}
+function closeMenu() {
+    const sidebar =
+        document.getElementById("sidebar");
+    sidebar.style.left = "-300px";
 }
 
 // Close Sidebar
