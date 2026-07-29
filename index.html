@@ -152,13 +152,46 @@ HOME
         <img src="images/photo4.jpg" alt="College Photo 4">
     </div>
 </section>
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Government Arts College, C. Mutlur</p>
-    <p>+91 9442477376</p>
-    <p>+91 9876543210</p>
-    <p> principal@gaccmutlur.edu.in</p>
-  </section>
+ <section id="contact">
+<h2>Contact Us</h2>
+
+<form id="contact-form">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <input type="text" name="title" placeholder="Subject" required>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Send</button>
+</form>
+
+<p>Government Arts College, C. Mutlur</p>
+<p>+91 9442477376</p>
+<p>+91 9876543210</p>
+<p>principal@gaccmutlur.edu.in</p>
+</section>
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+emailjs.init({
+    publicKey: "UTZB2ZtD8Eri4-nQd"
+});
+
+document.getElementById("contact-form").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    emailjs.sendForm(
+        "service_bgd6rvr",
+        "template_02t7ckn",
+        this
+    ).then(function(){
+        alert("Message Sent Successfully!");
+    }).catch(function(error){
+        alert("Failed to Send!");
+        console.log(error);
+    });
+});
+</script>
 <script src="script.js"></script>
 
 </body>
