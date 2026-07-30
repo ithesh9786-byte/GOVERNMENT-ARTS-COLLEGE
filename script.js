@@ -12,9 +12,6 @@ function closeMenu() {
 }
 
 // Close Sidebar
-function closeMenu() {
-    document.getElementById("sidebar").style.left = "-300px";
-}
 
 // Gallery Upload Preview
 function previewImage(event) {
