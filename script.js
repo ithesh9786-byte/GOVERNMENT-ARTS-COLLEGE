@@ -29,3 +29,18 @@ function showShift() {
         "Selected Course: <b>" + course +
         "</b><br>Shift: <b>" + shift + "</b>";
 }
+document.getElementById("admissionForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.send("service_bgd6rvr", "template_02t7ckn", {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        course: document.getElementById("course").value
+    }).then(function() {
+        alert("Admission Request Sent Successfully!");
+    }).catch(function(error) {
+        alert("Failed to Send!");
+        console.log(error);
+    });
+});
